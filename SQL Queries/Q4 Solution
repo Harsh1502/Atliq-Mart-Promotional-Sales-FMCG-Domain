@@ -1,0 +1,13 @@
+ select dim_products.category,
+		round(((sum(`quantity_sold(after_promo)`) - sum(`quantity_sold(before_promo)`))/
+		sum(`quantity_sold(before_promo)`)),2) *100 as isuPercentage,
+        
+        rank() over(order by round(((sum(`quantity_sold(after_promo)`) - sum(`quantity_sold(before_promo)`))/
+		sum(`quantity_sold(before_promo)`)),2) *100 DESC) as RankOrder
+		from fact_events 
+        join dim_products 
+        on fact_events.product_code = dim_products.product_code
+        where campaign_id = 'CAMP_DIW_01'
+        group by category;
+ 
+ 
