@@ -1,0 +1,9 @@
+
+select dim_products.product_name, dim_products.category,
+		round(((sum(base_price * `quantity_sold(after_promo)`) - sum(base_price * `quantity_sold(before_promo)`))/
+		sum(base_price * `quantity_sold(before_promo)`)),2) *100 as irPercentage
+        from fact_events 
+        join dim_products 
+        on fact_events.product_code = dim_products.product_code
+        group by product_name,category
+        order by irPercentage desc
