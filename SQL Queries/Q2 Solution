@@ -1,0 +1,3 @@
+ SELECT  city,COUNT(store_id) as No_Of_Stores from dim_stores
+ group by city 
+ order by No_Of_Stores desc;
