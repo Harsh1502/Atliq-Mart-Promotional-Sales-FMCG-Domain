@@ -8,6 +8,7 @@ fact_events
 dim_products
 
 Analysis Highlights:
+
 📊 Revenue vs Campaign:
 Mysuru is witnessing the highest incremental revenue among the analyzed locations.
 The Diwali campaign is proving to be more effective than the Sankranti campaign.
@@ -42,4 +43,5 @@ Consider discontinuing the 25% off promotion.
 🙏 Thank You!
 
 Contact: harshjadhav1502@gmail.com
+
 LinkedIn: https://www.linkedin.com/in/harsh-jadhav-55a52018b/
