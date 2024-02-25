@@ -1,0 +1,7 @@
+ select campaign_name,
+		sum(base_price * `quantity_sold(before_promo)`) as revenuebeforepromo, 
+        sum(base_price * `quantity_sold(after_promo)`) as revenueafterpromo
+        from fact_events join dim_campaigns
+        on dim_campaigns.campaign_id = fact_events.campaign_id
+        group by campaign_name;
+        
